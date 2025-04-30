@@ -4,67 +4,26 @@
   <meta charset="UTF-8">
   <title>My Research Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav {
-      background-color: #3260a8;
-      padding: 10px 0;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav ul li {
-      margin: 0 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .content {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    h1 {
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="published.html">Published Work</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Top navigation loaded from nav.html -->
+  <div id="navbar"></div>
 
   <div class="content">
     <h1>Welcome to My Research Site</h1>
-    <p>This is the main template. Use this layout to create all your other pages like `about.html`, `contact.html`, etc.</p>
+    <p>This is a template page. You can reuse it for every section of your site and keep the navigation bar consistent via <code>nav.html</code>.</p>
   </div>
+
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(err => console.error('Failed to load nav:', err));
+  </script>
 
 </body>
 </html>
