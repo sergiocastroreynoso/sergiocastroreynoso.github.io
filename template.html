@@ -22,14 +22,24 @@
 
   <div class="content">
     <h1>Welcome to My Research Site</h1>
-    <p>TEMPLATE</p>
+    <p>This is a template page. You can reuse it for every section of your site and keep the navigation bar consistent via <code>nav.html</code>.</p>
   </div>
 
+  <!-- Load nav.html and activate hamburger menu -->
   <script>
     fetch('nav.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar').innerHTML = data;
+
+        const toggle = document.querySelector('.nav-toggle');
+        const menu = document.querySelector('.nav-menu');
+
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+          });
+        }
       })
       .catch(err => console.error('Failed to load nav:', err));
   </script>
