@@ -13,17 +13,14 @@ nav {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* ✅ Center the menu on desktop */
   align-items: center;
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px 20px;
 }
 
-.nav-logo {
-  font-weight: bold;
-  font-size: 18px;
-}
+/* Removed .nav-logo — no longer used */
 
 .nav-toggle {
   background: none;
@@ -32,6 +29,8 @@ nav {
   color: white;
   cursor: pointer;
   display: none;
+  position: absolute;
+  left: 20px;
 }
 
 .nav-menu {
@@ -54,8 +53,16 @@ nav {
 
 /* Mobile styles */
 @media (max-width: 768px) {
+  .nav-container {
+    justify-content: flex-start; /* ✅ Align toggle + menu vertically */
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+  }
+
   .nav-toggle {
     display: block;
+    margin-bottom: 10px;
   }
 
   .nav-menu {
