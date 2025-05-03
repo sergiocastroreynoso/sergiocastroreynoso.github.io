@@ -1,74 +1,25 @@
-/* ---------- Base style ---------- */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-nav {
-  background-color: #3260a8;
-  color: white;
-}
-
-/* ---------- Desktop nav ---------- */
-.nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px 20px;
-
-  display: flex;
-  justify-content: center;      /* center menu on wide screens */
-  align-items: center;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.nav-menu li a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- Hamburger button ---------- */
-.nav-toggle {
-  background: none;
-  border: none;
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-
-  display: none;               /* visible only under 768 px */
-  position: absolute;
-  left: 20px;
-  top: 12px;
-  z-index: 10;                 /* stay above the menu */
-}
-
 /* ---------- Mobile breakpoint ---------- */
 @media (max-width: 768px) {
+
+  nav {
+    min-height: 50px; /* Ensure nav has minimum height */
+  }
 
   /* stack container so button sits above menu */
   .nav-container {
     flex-direction: column;
     align-items: stretch;
     position: relative;
+    min-height: 50px; /* Ensure container has minimum height */
   }
 
   /* show hamburger */
   .nav-toggle {
     display: block;
+    position: relative; /* Change from absolute to relative */
+    left: auto;
+    top: auto;
+    margin: 10px 0 10px 20px; /* Add some margin for spacing */
   }
 
   /* hide menu until toggled */
@@ -78,6 +29,7 @@ nav {
     width: 100%;
     background-color: #3260a8;
     padding: 10px 0;
+    margin-top: 0; /* Remove any top margin */
   }
 
   /* when JS adds .active we reveal it */
@@ -89,19 +41,4 @@ nav {
     text-align: center;
     margin: 10px 0;
   }
-}
-
-/* ---------- Content ---------- */
-.content {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
-h1 {
-  text-align: center;
-}
-
-a {
-  color: #3260a8;
 }
