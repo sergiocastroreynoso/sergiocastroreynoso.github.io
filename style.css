@@ -1,44 +1,46 @@
-/* ---------- Mobile breakpoint ---------- */
-@media (max-width: 768px) {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+}
 
-  nav {
-    min-height: 50px; /* Ensure nav has minimum height */
-  }
+nav {
+  background-color: #3260a8;
+}
 
-  /* stack container so button sits above menu */
-  .nav-container {
-    flex-direction: column;
-    align-items: stretch;
-    position: relative;
-    min-height: 50px; /* Ensure container has minimum height */
-  }
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;                /* ✅ Wraps on small screens */
+  justify-content: center;
+  gap: 20px;
+}
 
-  /* show hamburger */
-  .nav-toggle {
-    display: block;
-    position: relative; /* Change from absolute to relative */
-    left: auto;
-    top: auto;
-    margin: 10px 0 10px 20px; /* Add some margin for spacing */
-  }
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;            /* ✅ Prevents awkward line breaks in long titles */
+}
 
-  /* hide menu until toggled */
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #3260a8;
-    padding: 10px 0;
-    margin-top: 0; /* Remove any top margin */
-  }
+.nav-menu li a:hover {
+  text-decoration: underline;
+}
 
-  /* when JS adds .active we reveal it */
-  .nav-menu.active {
-    display: flex;
-  }
+.content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
-  .nav-menu li {
-    text-align: center;
-    margin: 10px 0;
-  }
+h1 {
+  text-align: center;
+}
+
+a {
+  color: #3260a8;
 }
