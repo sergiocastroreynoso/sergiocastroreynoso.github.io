@@ -17,24 +17,27 @@
 </head>
 <body>
 
-  <nav>
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="published.html">Published Work</a></li>
-      <li><a href="articles.html">Articles</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Navigation injected from nav.html -->
+  <div id="navbar"></div>
 
   <div class="content">
     <h1>About Me</h1>
     <br><br>
     <p>
-      To know more about me, please check my 
+      To know more about me, please check my
       <a href="https://www.linkedin.com/in/castrosergio/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>.
     </p>
   </div>
+
+  <!-- Load nav.html and activate wrapping menu (no hamburger) -->
+  <script>
+    fetch('nav.html?cachebust=1')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+      })
+      .catch(e => console.error('Nav load error', e));
+  </script>
 
 </body>
 </html>
