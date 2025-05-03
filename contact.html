@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Research Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZT331P2SB2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZT331P2SB2');
+  </script>
+</head>
+<body>
+
+  <!-- Top navigation loaded from nav.html -->
+  <div id="navbar"></div>
+
+  <div class="content">
+    <h1>Contact</h1>
+    <p>text</p>
+  </div>
+
+  <!-- Load nav.html and activate hamburger menu -->
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+
+        const toggle = document.querySelector('.nav-toggle');
+        const menu = document.querySelector('.nav-menu');
+
+        if (toggle && menu) {
+          toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+          });
+        }
+      })
+      .catch(err => console.error('Failed to load nav:', err));
+  </script>
+
+</body>
+</html>
