@@ -19,7 +19,7 @@ nav {
   padding: 10px 20px;
 
   display: flex;
-  justify-content: center;      /* center menu horizontally on wide screens */
+  justify-content: center;      /* center menu on wide screens */
   align-items: center;
 }
 
@@ -53,7 +53,7 @@ nav {
   position: absolute;
   left: 20px;
   top: 12px;
-  z-index: 10;                 /* keep it above the menu */
+  z-index: 10;                 /* stay above the menu */
 }
 
 /* ---------- Mobile breakpoint ---------- */
